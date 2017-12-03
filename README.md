@@ -8,5 +8,4 @@ Lớp: KHMT1-K12
 
 Facebook: https://www.facebook.com/lam.hoangtung.69
 
-SĐT: 0962.724.967
 ## Các anh vào chấm bài hoặc thấy em sai ở đâu cứ thả Issues hoặc Pull Request cho em nhá. Em xin cám ơn ạ <3
