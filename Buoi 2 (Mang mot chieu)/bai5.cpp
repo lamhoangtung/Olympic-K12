@@ -12,7 +12,7 @@ int main(void){
   }
   cout << "Cac phan tu trong a la uoc cua " << n << " la:\n";
   for (i=1;i<=n;i++){
-    if (a[i]%n==0){
+    if (n%a[i]==0){ //Fixed: a[i] la uoc cua n;
       cout << a[i] << "  ";
       t+=a[i];
     }
