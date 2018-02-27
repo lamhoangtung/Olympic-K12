@@ -14,8 +14,18 @@ int main(void){
   long long j=0,ans=0;
   for (long long i=0;i<n;i++){
     if (s[i]=='1') j++;
+    cout << j << "\n";
     if (j>=k) ans+=v[j-k];
+    for (vector<long long>::iterator it=v.begin();it!=v.end();it++){
+      cout << (*it) << " ";
+    }
+    cout << "\n" << ans << "\n";
     v[j]++;
+    for (vector<long long>::iterator it=v.begin();it!=v.end();it++){
+      cout << (*it) << " ";
+    }
+    cout << "\n\n";
+
   }
   cout << ans;
 }
