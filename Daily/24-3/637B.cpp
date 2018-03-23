@@ -10,7 +10,7 @@ int main(void){
 	cin >> n;
   stack<string> s;
   map<string,int> m;
-	for(int i=0;i<n;i++){
+	for (int i=0;i<n;i++){
     string temp;
 		cin >> temp;
 		s.push(temp);
