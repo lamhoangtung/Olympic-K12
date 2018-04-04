@@ -22,4 +22,3 @@ int main(void) {
       cout << "NO " << (it-v.begin()+1) << "\n";
    }
 }
-#lol test
