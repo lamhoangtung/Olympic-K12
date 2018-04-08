@@ -15,18 +15,18 @@ int main(void) {
 		sum+=a;
 		m[b]+=r-a;
 	}
-	unsigned long long k = 0;
+	unsigned long long ans = 0;
 	map <unsigned long long, unsigned long long>::iterator it = m.begin();
 	while (x>sum && it!=m.end()){
 		if (x-sum>(*it).second){
-			k+=(*it).second*(*it).first;
+			ans+=(*it).second*(*it).first;
 			sum+=(*it).second;
 		}
     else{
-			k+=(x-sum)*(*it).first;
+			ans+=(x-sum)*(*it).first;
 			sum+=(x-sum);
 		}
 		++it;
 	}
-	cout << k;
+	if (ans>1000000000000000000) cout << 0; else cout << ans;
 }
