@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(void){
-  long long n,t,a[105],sum=0;
+  long long n,t,a[90005],sum=0;
   cin >> n >> t;
   for (int i=0;i<n;i++){
     cin >> a[i];
