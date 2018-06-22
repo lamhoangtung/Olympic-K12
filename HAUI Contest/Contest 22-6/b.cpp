@@ -6,6 +6,9 @@
 
 #include <iostream>
 #include <algorithm>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #define memo(a,b) memset((a),(b),sizeof(a))
 
 using namespace std;
