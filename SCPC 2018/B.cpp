@@ -1,57 +1,71 @@
-#include <iostream>
-#include <cmath>
+#include<iostream>
+#include<cmath>
 
 using namespace std;
-
-int dx(long long n){
-	if (n<0) return 0;
-	long long m=n;
+int nt(long long n){
+	if(n<0) return 0;
+		long long m=n;
 	long long z=0;
-	while (n){
+	while(n){
 		z+=n%10;
 		z*=10;
 		n/=10;
 	}
 	z/=10;
-	if (m==z) return 1;
-	else return 0;
+	if(m==z) return 1;
+	 return 0;
 }
-
 int main(){
 	long long i,j,t;
-	cin >> t;
+	cin>>t;
 	long long p=1;
-	while (t){
+	long long mang[199]={1,2,3,4,5,6,7,8,9,11,22,33,44,55,66,77,88,99,101,111,121,131,141,151,161,171,181,191,202,212,222,232,242,252,262,272,282,292,303,313,323,333,343,353,363,373,383,393,404,414,424,434,444,454,464,474,484,494,505,515,525,535,545,555,565,575,585,595,606,616,626,636,646,656,666,676,686,696,707,717,727,737,747,757,767,777,787,797,808,818,828,838,848,858,868,878,888,898,909,919,929,939,949,959,969,979,989,999,1001,1111,1221,1331,1441,1551,1661,1771,1881,1991,2002,2112,2222,2332,2442,2552,2662,2772,2882,2992,3003,3113,3223,3333,3443,3553,3663,3773,3883,3993,4004,4114,4224,4334,4444,4554,4664,4774,4884,4994,5005,5115,5225,5335,5445,5555,5665,5775,5885,5995,6006,6116,6226,6336,6446,6556,6666,6776,6886,6996,7007,7117,7227,7337,7447,7557,7667,7777,7887,7997,8008,8118,8228,8338,8448,8558,8668,8778,8888,8998,9009,9119,9229,9339,9449,9559,9669,9779,9889,9999};
+	while(t){
 		long long n;
-		cin >> n;
-		for (i=n;i>=1;i--){
-			if (dx(i)){
-				if(i==n){
-					cout << "Case #" << p << endl;
-					cout << "1" << " " << i << endl;
-					break;
-				}
-				else if(dx(n-i)){
-					cout << "Case #" << p << endl;
-					cout << "2" << " " << i << " " << n-i << endl;
-					break;
-				}
-				else {
-					int l=0;
-					for (j=i;j>=1;j--){
-						if(dx(j)&&dx(n-i-j)){
-							l=1;
-							cout << "Case #" << p << endl;
-							cout << "3" << " " << i << " " << j << " " << n-i-j << endl;
-							break;
-						}
-					}
-					if (l==1) break;
-				}
+		cin>>n;
+		int res=1;
+		for(i=0;i<198;i++){
+			if(mang[i]==n){
+				cout<<"Case #"<<p<<endl;
+				cout<<"1"<<" "<<n<<endl;
+				res=0;
+				break;
 			}
 		}
+		if(res==1){
+		for(i=0;i<198;i++){
+			for(j=0;j<198;j++){
+				if(mang[i]+mang[j]==n){
+			cout<<"Case #"<<p<<endl;
+			res=3;
+			cout<<"2"<<" "<<mang[j]<<" "<<mang[i]<<endl;
+			break;
+		}
+	}
+	if(res==3) break;
+}
+	}
+		if(res==1){
+		for(i=0;i<198;i++){
+			for(j=0;j<198;j++){
+				for(int k=1;k<=10;k++){
+				if(mang[i]+mang[j]+k==n){
+			cout<<"Case #"<<p<<endl;
+			res=2;
+			cout<<"3"<<" "<<mang[j]<<" "<<mang[i]<<" "<<k<<endl;
+			break;
+		}
+
+	}
+	if(res==2) break;
+	}
+	if(res==2) break;
+}
+}
+
 		p++;
 		t--;
 	}
+
 	return 0;
 }
