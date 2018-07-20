@@ -2,12 +2,15 @@
 
 using namespace std;
 
-int n,a[1000000];
-long long tree[4000000];
+int n,a[1000];
+long long tree[4000];
 
 void build(int l, int r, int node){
   if (l>r) return;
-  if (l==r) tree[node]=a[l];
+  if (l==r){
+    tree[node]=a[l];
+    return ;
+  }
   build(l,(l+r)/2,2*node);
   build(((l+r)/2+1),r,2*node+1);
   tree[node] = tree[2*node] + tree[2*node+1];
