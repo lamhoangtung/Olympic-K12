@@ -20,7 +20,7 @@ void update(int l, int r, int node, int pos, int value){
 }
 
 long long query(int l,int r, int node, int low, int high){
-  if (l==low && l==high) return tree[node];
+  if (l==low && r==high) return tree[node];
   if (low>r || high<l) return 0;
   return query(l,(l+r)/2,2*node,low,high) + query((((l+r)/2)+1),r,2*node+1,low,high);
 }
